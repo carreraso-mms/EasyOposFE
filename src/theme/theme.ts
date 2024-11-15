@@ -1,87 +1,123 @@
-import { createSystem, defineConfig } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
-const config = defineConfig({
-  theme: {
-    tokens: {
-      colors: {
-        background: {
-          '900': { value: '#1E1E1E' }, // Fondo principal (oscuro)
-          '800': { value: '#2C2C2C' }, // Fondo de componentes secundarios
-          '700': { value: '#3D3D3D' }, // Fondo para hover
-          '600': { value: '#4E4E4E' }, // Borde sutil o fondo adicional
-        },
-        primary: {
-          '500': { value: '#10A37F' }, // Color principal, botones y elementos destacados
-          '400': { value: '#15C39A' }, // Variación para hover
-        },
-        text: {
-          '900': { value: '#FFFFFF' }, // Texto principal
-          '700': { value: '#E0E0E0' }, // Texto secundario
-          '500': { value: '#B0B0B0' }, // Texto menos destacado
-        },
-        accent: {
-          '500': { value: '#FF4081' }, // Color de acento para resaltar elementos específicos
-        },
-      },
-      fonts: {
-        heading: { value: 'Inter, sans-serif' },
-        body: { value: 'Inter, sans-serif' },
-        mono: { value: 'Menlo, monospace' },
-      },
-      fontSizes: {
-        xs: { value: '12px' },
-        sm: { value: '14px' },
-        md: { value: '16px' },
-        lg: { value: '18px' },
-        xl: { value: '20px' },
-        '2xl': { value: '24px' },
-        '3xl': { value: '30px' },
-        '4xl': { value: '36px' },
-        '5xl': { value: '48px' },
-        '6xl': { value: '64px' },
-      },
-      fontWeights: {
-        normal: { value: 400 },
-        medium: { value: 500 },
-        bold: { value: 700 },
-      },
-      spacing: {
-        px: { value: '1px' },
-        1: { value: '4px' },
-        2: { value: '8px' },
-        3: { value: '12px' },
-        4: { value: '16px' },
-        5: { value: '20px' },
-        6: { value: '24px' },
-        8: { value: '32px' },
-        10: { value: '40px' },
-        12: { value: '48px' },
-        16: { value: '64px' },
-        20: { value: '80px' },
-        24: { value: '96px' },
-        32: { value: '128px' },
-        40: { value: '160px' },
-        48: { value: '192px' },
-        56: { value: '224px' },
-        64: { value: '256px' },
-      },
-      radii: {
-        none: { value: '0' },
-        sm: { value: '2px' },
-        md: { value: '4px' },
-        lg: { value: '8px' },
-        full: { value: '9999px' },
-      },
-      shadows: {
-        sm: { value: '0 1px 2px rgba(0, 0, 0, 0.05)' },
-        md: { value: '0 4px 6px rgba(0, 0, 0, 0.1)' },
-        lg: { value: '0 10px 15px rgba(0, 0, 0, 0.15)' },
-        xl: { value: '0 20px 25px rgba(0, 0, 0, 0.2)' },
-      },
+const theme = extendTheme({
+  breakpoints: {
+    sm: '30em', // 480px
+    md: '48em', // 768px
+    lg: '62em', // 1024px
+    xl: '80em', // 1280px
+    '2xl': '96em', // 1536px
+  },
+  colors: {
+    background: {
+      light: '#1E1E1E',
+      dark: '#121212',
     },
+    primary: {
+      100: '#333333',
+      200: '#2C2C2C',
+      300: '#1F1F1F',
+      400: '#3B3B3B',
+      500: '#4A4A4A',
+      600: '#5A5A5A',
+      700: '#6B6B6B',
+      800: '#7C7C7C',
+      900: '#FFFFFF',
+    },
+    text: {
+      primary: '#FFFFFF',
+      secondary: '#B0B0B0',
+      muted: '#8A8A8A',
+    },
+    accent: {
+      500: '#FF4081',
+      600: '#E53E3E',
+    },
+    border: {
+      default: '#3B3B3B',
+    },
+  },
+  fonts: {
+    heading: `'Inter', sans-serif`,
+    body: `'Roboto', sans-serif`,
+    mono: `'Menlo', monospace`,
+  },
+  fontSizes: {
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '18px',
+    xl: '20px',
+    '2xl': '24px',
+    '3xl': '30px',
+    '4xl': '36px',
+    '5xl': '48px',
+    '6xl': '64px',
+  },
+  fontWeights: {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+  },
+  radii: {
+    none: '0',
+    sm: '2px',
+    md: '4px',
+    lg: '8px',
+    xl: '16px',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.2)',
+    xl: '0 20px 25px rgba(0, 0, 0, 0.3)',
+  },
+  sizes: {
+    xs: '4rem',
+    sm: '8rem',
+    md: '16rem',
+    lg: '24rem',
+    xl: '32rem',
+    '2xl': '40rem',
+    full: '100%',
+  },
+
+  // Espaciado
+  space: {
+    px: '1px',
+    '0.5': '2px',
+    1: '4px',
+    2: '8px',
+    3: '12px',
+    4: '16px',
+    5: '20px',
+    6: '24px',
+    8: '32px',
+    10: '40px',
+    12: '48px',
+    16: '64px',
+    20: '80px',
+    24: '96px',
+    32: '128px',
+    40: '160px',
+    48: '192px',
+    56: '224px',
+    64: '256px',
+  },
+  zIndices: {
+    hide: -1,
+    auto: 'auto',
+    base: 0,
+    docked: 10,
+    dropdown: 1000,
+    sticky: 1100,
+    banner: 1200,
+    overlay: 1300,
+    modal: 1400,
+    popover: 1500,
+    tooltip: 1600,
   },
 })
 
-const system = createSystem(config)
-
-export default system
+export default theme
